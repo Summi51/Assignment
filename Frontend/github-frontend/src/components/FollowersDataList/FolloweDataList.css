@@ -1,0 +1,131 @@
+.followersPage {
+  padding: 50px;
+  display: grid;
+  gap: 40px;
+  background-color: #f9f9f9;
+  font-family: Arial, sans-serif;
+}
+
+.backButton {
+  padding: 12px 20px;
+  color: white;
+  border: none;
+  background-color: #0078d4;
+  border-radius: 5px;
+  cursor: pointer;
+  display: inline-block;
+  text-align: center;
+  font-size: 1rem;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.backButton:hover {
+  background-color: #0056a3;
+  transform: scale(1.05);
+}
+
+.mainProfile {
+  width: 100%;
+  display: flex;
+  gap: 50px;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.userProfile {
+  flex-direction: column;
+  align-items: center;
+  display: flex;
+  gap: 15px;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.imagePic {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 3px solid #0078d4;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.dataUser h2 {
+  font-size: 1.5rem;
+  color: #333333;
+  margin: 5px 0;
+}
+
+.dataUser p {
+  font-size: 1rem;
+  color: #555555;
+  margin: 5px 0;
+}
+
+.followersList {
+  flex: 3;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.followersList h3 {
+  font-size: 1.2rem;
+  color: #0078d4;
+  margin-bottom: 15px;
+}
+
+.followersList ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.followerItem {
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+  cursor: pointer;
+  gap: 15px;
+  padding: 10px 15px;
+  border-radius: 8px;
+  background-color: #f5f5f5;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.followerItem:hover {
+  background-color: #e3f2fd;
+  transform: scale(1.03);
+}
+
+.followerPic {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 2px solid #0078d4;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+button {
+  margin-top: 20px;
+  padding: 12px 20px;
+  background-color: #0078d4;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+  background-color: #0056a3;
+  transform: scale(1.05);
+}

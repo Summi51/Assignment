@@ -1,0 +1,75 @@
+.repository-container {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  font-family: Arial, sans-serif;
+}
+
+.repository-card {
+  text-align: center;
+}
+
+.repository-name {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.repository-details {
+  text-align: left;
+  font-size: 1rem;
+  color: #555;
+  margin-top: 15px;
+}
+
+.repository-description {
+  font-style: italic;
+  color: #888;
+  margin-bottom: 15px;
+}
+
+.repository-details p {
+  margin-bottom: 10px;
+}
+
+.repository-link {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #2b8a3e;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.repository-link:hover {
+  background-color: #1f5c29;
+}
+
+.loading-message {
+  font-size: 1.2rem;
+  color: #555;
+  text-align: center;
+}
+
+.back-button {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.back-button:hover {
+  background-color: #0056b3;
+}
