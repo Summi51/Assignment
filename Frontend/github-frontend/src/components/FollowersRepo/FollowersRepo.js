@@ -3,7 +3,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import "./FollowersRepo.css";
 
 const FollowerRepo = () => {
-  const { followerLogin } = useParams();
+  const { followAccess } = useParams();
   const [repos, setRepos] = useState([]);
   const navigate = useNavigate();
 
@@ -11,7 +11,7 @@ const FollowerRepo = () => {
     const fetchRepos = async () => {
       try {
         const response = await fetch(
-          `https://api.github.com/users/${followerLogin}/repos`
+          `https://api.github.com/users/${followAccess}/repos`
         );
         const data = await response.json();
         setRepos(data);
@@ -21,18 +21,18 @@ const FollowerRepo = () => {
     };
 
     fetchRepos();
-  }, [followerLogin]);
+  }, [followAccess]);
 
   return (
     <div className="followerRepo">
       <button
-        onClick={() => navigate(`/followers/${followerLogin}`)}
+        onClick={() => navigate(`/followers/${followAccess}`)}
         className="back-button"
       >
         Back to Followers List Repositories
       </button>
 
-      <h1>Repositories of {followerLogin}</h1>
+      <h1>Repositories of {followAccess}</h1>
       <ul className="repo-list">
         {repos.map((repo) => (
           <li key={repo.id} className="repoItem">

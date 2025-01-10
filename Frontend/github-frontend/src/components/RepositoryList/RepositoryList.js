@@ -6,36 +6,44 @@ const RepositoryList = ({ user, repos }) => {
   const navigate = useNavigate();
 
   return (
-    <div>
+    <div className="repository-container">
       <div className="user-profile">
-        <h2>{user.login}</h2>
-        <img src={user.avatar_url} alt={user.name} />
-        <p>{user.bio}</p>
-        <button onClick={() => navigate(`/followers/${user.login}`)}>
-          View Followers
-        </button>
-        <button onClick={() => navigate("/")}>Back to Home</button>
+        <div className="user-info">
+          <img src={user.avatar_url} alt={user.name} className="user-image" />
+          <div className="user-details">
+            <h2>{user.login}</h2>
+            <p>{user.bio}</p>
+          </div>
+        </div>
+        <div className="user-actions">
+          <button onClick={() => navigate(`/followers/${user.login}`)}>
+            View Followers
+          </button>
+          <button onClick={() => navigate("/")}>Back to Home</button>
+        </div>
       </div>
-      <ul className="repo-list">
+
+      <div className="repos-container">
         {repos.map((repo) => (
-          <li key={repo.name} className="repo-item">
-            <img
-              src={repo.owner.avatar_url}
-              alt={repo.name}
-              className="repo-img"
-            />
+          <div className="repo-card" key={repo.name}>
             <Link to={`/repo/${repo.owner.login}/${repo.name}`}>
-              <div className="repo-details">
+              <div className="repo-image-container">
+                <img
+                  src={repo.owner.avatar_url}
+                  alt={repo.name}
+                  className="repo-image"
+                />
+              </div>
+              <div className="repo-info">
                 <h3>{repo.name}</h3>
                 <p>{repo.description || "No description available."}</p>
               </div>
             </Link>
-          </li>
+          </div>
         ))}
-      </ul>
+      </div>
     </div>
   );
 };
 
 export default RepositoryList;
-

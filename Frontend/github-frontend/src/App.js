@@ -35,7 +35,7 @@ const App = () => {
               element={<FollowersDataList followersUrl={userData.followers_url} />}
             />
             <Route
-              path="/follower-repos/:followerLogin"
+              path="/follower-repos/:followAccess"
               element={<FollowerRepo />}
             />
           </>

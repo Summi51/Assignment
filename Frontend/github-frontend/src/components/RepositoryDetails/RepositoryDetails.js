@@ -3,7 +3,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import "./RepositoryDetails.css";
 
 const RepositoryDetails = () => {
-  const { owner, repoName } = useParams();
+  const { owner, repoHub } = useParams();
   const [repo, setRepo] = useState(null);
   const navigate = useNavigate();
 
@@ -11,7 +11,7 @@ const RepositoryDetails = () => {
     const fetchRepoDetails = async () => {
       try {
         const response = await fetch(
-          `https://api.github.com/repos/${owner}/${repoName}`
+          `https://api.github.com/repos/${owner}/${repoHub}`
         );
         const data = await response.json();
         setRepo(data);
@@ -20,7 +20,7 @@ const RepositoryDetails = () => {
       }
     };
     fetchRepoDetails();
-  }, [owner, repoName]);
+  }, [owner, repoHub]);
 
   return (
     <div className="repo-details-container">
@@ -58,7 +58,7 @@ const RepositoryDetails = () => {
         <p className="loading">Loading...</p>
       )}
       <a className="back-link" onClick={() => navigate(-1)}>
-        Go Back
+        Go Back Page
       </a>
     </div>
   );
