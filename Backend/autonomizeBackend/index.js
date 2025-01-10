@@ -5,6 +5,10 @@ const { connection } = require("./db");
 const app = express();
 app.use(cors());
 app.use(express.json());
+app.get("/", (req, res) => {
+  res.send("Hello Masai");
+  console.log("Hello Masai");
+});
 const userRouter = require("./routes/user.routes");
 app.use("/api", userRouter);
 
