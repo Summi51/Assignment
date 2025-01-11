@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import "./RepositoryDetails.css";
 
+
 const RepositoryDetails = () => {
   const { owner, repoName } = useParams();
   const [repo, setRepo] = useState(null);
