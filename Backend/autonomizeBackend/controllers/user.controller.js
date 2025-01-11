@@ -6,14 +6,14 @@ require("dotenv").config();
 
 const token = process.env.token;
 
-const saveUserData = async (req, res) => {
+const UserData = async (req, res) => {
   const { username } = req.params;
 
   try {
-    const normalizedUsername = username.trim();
+    const userAuto = username.trim();
 
     let existingUser = await User.findOne({
-      username: normalizedUsername,
+      username: userAuto,
     });
 
     if (existingUser) {
@@ -35,7 +35,7 @@ const saveUserData = async (req, res) => {
     }
 
     const response = await axios.get(
-      `https://api.github.com/users/${normalizedUsername}`,
+      `https://api.github.com/users/${userAuto}`,
       {
         headers: {
           Authorization: `Bearer ${token}`, 
@@ -76,7 +76,7 @@ const saveUserData = async (req, res) => {
   }
 };
 
-const findMutualFollowers = async (req, res) => {
+const findFollowers = async (req, res) => {
   const { username } = req.params;
 
   try {
@@ -129,7 +129,7 @@ const searchUsers = async (req, res) => {
   }
 };
 
-const softDeleteUser = async (req, res) => {
+const DeleteUser = async (req, res) => {
   const { username } = req.params;
   try {
     const result = await User.findOneAndDelete({
@@ -179,10 +179,10 @@ const getUsersSorted = async (req, res) => {
 };
 
 module.exports = {
-  saveUserData,
-  findMutualFollowers,
+  UserData,
+  findFollowers,
   searchUsers,
-  softDeleteUser,
+  DeleteUser,
   updateUserData,
   getUsersSorted,
 };
