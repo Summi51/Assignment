@@ -29,7 +29,7 @@ const App = () => {
               path="/repo"
               element={<RepositoryList user={userData} repos={repos} />}
             />
-            <Route path="/repo/:owner/:repoName" element={<RepositoryDetails />} />
+            <Route path="/repo/:owner/:repoHub" element={<RepositoryDetails />} />
             <Route
               path="/followers/:name"
               element={<FollowersDataList followersUrl={userData.followers_url} />}
